@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .input-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .input-form input {
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .form-area {
+        border: 2px solid black;
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .button-container input {
+        padding: 5px;
+        border-radius: 5px;
+        width: 95%;
+        cursor: pointer;
+        transition: all;
+        transition-duration: 200ms;
+      }
+      .button-container input:hover {
+        background-color: #2b2b2b;
+        color: white;
+      }
+      .button-container {
+        width: 100%;
+        text-align: center;
+      }
+      textarea {
+        padding: 10px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-area">
+        <div class="input-form">
+          <input type="text" placeholder="Qoute Author" id="qoute-author" />
+          <textarea
+            name="qoute-teks"
+            id="qoute-teks"
+            rows="5"
+            cols="50"
+            placeholder="Qoute Teks..."
+          ></textarea>
+        </div>
+        <div class="button-container">
+          <input type="button" value="Submit" id="button" />
+        </div>
+      </div>
+    </div>
+    <script src="addQoutes.js"></script>
+  </body>
+</html>
