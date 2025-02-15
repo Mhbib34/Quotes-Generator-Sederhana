@@ -10,10 +10,9 @@ async function loadData() {
   return data;
 }
 
+const authorInput = document.getElementById("qoute-author");
+const qouteTeks = document.getElementById("qoute-teks");
 async function addQuotes() {
-  const authorInput = document.getElementById("qoute-author");
-  const qouteTeks = document.getElementById("qoute-teks");
-
   const newQuote = {
     text: qouteTeks.value,
     author: authorInput.value,
@@ -24,7 +23,9 @@ async function addQuotes() {
     quotesData.push(newQuote);
 
     localStorage.setItem("quotes", JSON.stringify(quotesData));
-    console.log("Quote berhasil ditambahkan!");
+    alert("Quote berhasil ditambahkan!");
+    authorInput.value = "";
+    qouteTeks.value = "";
   } catch (error) {
     console.error("Terjadi kesalahan:", error);
   }
@@ -34,4 +35,11 @@ const tombol = document.getElementById("button");
 tombol.addEventListener("click", (e) => {
   e.preventDefault();
   addQuotes();
+});
+
+authorInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") addQuotes();
+});
+qouteTeks.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") addQuotes();
 });
